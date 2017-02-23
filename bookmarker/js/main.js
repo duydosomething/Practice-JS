@@ -7,17 +7,10 @@ function saveBookmark(e){
 	var siteName = document.getElementById('siteName').value;
 	var siteURL = document.getElementById('siteURL').value;
 
-	if(!siteName || !siteURL){
-		alert('Please fill in the form');
+	
+	if(!validateForm(siteName, siteURL)){
 		return false;
 	}
-	var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
-	var regex = new RegExp(expression);
-	if(!siteURL.match(regex)){
-		alert('Please use valid URL');
-		return false
-	}
-
 
 
 	var bookmark = {
@@ -102,4 +95,17 @@ function fetchBookmarks(){
 
 	}
 }
-
+// Validate form
+function validateForm(siteName, siteURL){
+	if(!siteName || !siteURL){
+		alert('Please fill in the form');
+		return false;
+	}
+	var expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+	var regex = new RegExp(expression);
+	if(!siteURL.match(regex)){
+		alert('Please use valid URL');
+		return false
+	}
+	return true;
+}
