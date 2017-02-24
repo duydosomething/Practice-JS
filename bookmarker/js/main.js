@@ -48,6 +48,10 @@ function saveBookmark(e){
 
 		localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 	}
+	// Clear form
+	document.getElementById('myForm').reset;
+
+	// Fetch bookmark call
 	fetchBookmarks();
 	// Prevents form from submitting
 	e.preventDefault();
