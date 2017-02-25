@@ -1,0 +1,12 @@
+{
+	"manifest_version": 2,
+	"name": "The Pop",
+	"description": "Some random extension I, Duy, am making",
+	"version": "1.0",
+
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "popup.html",
+		"default_title": "Motivate ME"
+	}
+}
